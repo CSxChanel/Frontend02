@@ -1,29 +1,15 @@
-// src/app/layout.jsx
-
-import { Orbitron, Rajdhani } from "next/font/google";
-
-const orbitron = Orbitron({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-orbitron",
-});
-
-const rajdhani = Rajdhani({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-  variable: "--font-rajdhani",
-});
+import ThemeProvider from "./providers/themeProvider";
+import "./styles/globals.css";
 
 export const metadata = {
-  title: "My App",
-  description: "Awesome stuff",
+  title: "SKYNET WiFi Dashboard",
 };
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
-      <body className={`${orbitron.variable} ${rajdhani.variable}`}>
-        {children}
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-gray-50 dark:bg-gray-900">
+        <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>
   );

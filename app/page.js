@@ -1,7 +1,5 @@
+import { redirect } from "next/navigation";
+
 export default function Home() {
-  return (
-    <>
-      <h1>halaman utama</h1>
-    </>
-  );
+  redirect("/dashboard"); // Auto-redirect ke dashboard
 }
