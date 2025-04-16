@@ -1,5 +1,5 @@
-import Header from "./header";
-import Sidebar from "./sidebar";
+import Header from "./hearde-dashboard";
+import Sidebar from "./sidebar-dashboard";
 
 export default function LayoutPages({ children }) {
   return (
