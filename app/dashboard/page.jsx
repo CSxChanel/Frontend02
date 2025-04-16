@@ -1,30 +1,38 @@
-import NeonCard from "./_components/ui/neonCard";
-import UserProfileCard from "./_components/userProfileCard";
-import PaymentStatus from "./_components/paymentStatus";
+import { FiActivity, FiClock, FiCreditCard, FiZap } from "react-icons/fi";
+import DataGlowCard from "../_components/ui/dataGlowCard";
+import SpeedMeter from "../_components/ui/speedMeter";
+import PaymentCountdown from "../_components/ui/paymentCountdown";
+import UsageChart from "../_components/ui/usageChart";
 
 export default function DashboardPage() {
-  const userData = {
-    name: "John Doe",
-    phone: "+628123456789",
-    address: "Jl. Contoh No. 123",
-    package: "Premium 100Mbps",
-    joinDate: "2023-01-15",
-    paymentStatus: "paid",
-    dueDate: "2023-11-30",
-  };
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-      <NeonCard>
-        <UserProfileCard data={userData} />
-      </NeonCard>
+    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+      {/* Network Speed Card */}
+      <DataGlowCard className="lg:col-span-2">
+        <div className="flex items-center gap-3 mb-4">
+          <FiZap className="text-yellow-400 text-2xl" />
+          <h3 className="font-mono text-lg">NETWORK SPEED</h3>
+        </div>
+        <SpeedMeter speed={85} />
+      </DataGlowCard>
 
-      <NeonCard>
-        <PaymentStatus
-          status={userData.paymentStatus}
-          dueDate={userData.dueDate}
-        />
-      </NeonCard>
+      {/* Payment Status */}
+      <DataGlowCard>
+        <div className="flex items-center gap-3 mb-4">
+          <FiCreditCard className="text-purple-400 text-2xl" />
+          <h3 className="font-mono text-lg">PAYMENT</h3>
+        </div>
+        <PaymentCountdown days={5} />
+      </DataGlowCard>
+
+      {/* Usage Statistics */}
+      <DataGlowCard className="lg:col-span-3">
+        <div className="flex items-center gap-3 mb-4">
+          <FiActivity className="text-cyan-400 text-2xl" />
+          <h3 className="font-mono text-lg">USAGE ANALYTICS</h3>
+        </div>
+        <UsageChart />
+      </DataGlowCard>
     </div>
   );
 }
