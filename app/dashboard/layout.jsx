@@ -2,6 +2,7 @@
 "use client";
 import Sidebar from "@/app/_components/layouts/sidebar-dashboard";
 import Header from "@/app/_components/layouts/hearde-dashboard";
+import ThemeProvider from "../providers/themeProvider";
 
 const containerVariants = {
   hidden: { opacity: 0 },
