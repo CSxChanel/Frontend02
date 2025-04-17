@@ -1,7 +1,7 @@
 // app/dashboard/layout.jsx
 "use client";
-import Sidebar from "@/app/layouts/sidebar-dashboard";
-import Header from "@/app/layouts/hearde-dashboard";
+import Sidebar from "@/app/_components/layouts/sidebar-dashboard";
+import Header from "@/app/_components/layouts/hearde-dashboard";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -13,20 +13,11 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { y: 20, opacity: 0 },
-  visible: {
-    y: 0,
-    opacity: 1,
-    transition: { type: "spring", stiffness: 100 },
-  },
-};
-
 export default function DashboardLayout({ children }) {
   return (
     <div className="flex min-h-screen">
       <Sidebar />
-      <div className="flex-1 bg-gradient-to-br from-black via-gray-900 to-gray-800 text-white">
+      <div className="flex-1 bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
         <Header />
         <main
           variants={containerVariants}

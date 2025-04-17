@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 /* Neon Animation */
-@keyframes text-shine {
+/* @keyframes text-shine {
   0% {
     background-position: 0% 50%;
   }
@@ -12,11 +12,11 @@
 
 .animate-text-shine {
   animation: text-shine 3s ease-in-out infinite alternate;
-}
+} */
 
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-track {
