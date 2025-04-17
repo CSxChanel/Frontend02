@@ -15,7 +15,7 @@ import SidebarMenuGroup from "./SidebarMenuGrup";
 import SidebarItem from "./SidebarItem";
 import UserProfile from "./UserProfile";
 
-export default function Sidebar({ collapsed, mobileMenuOpen, onToggle }) {
+export default function Sidebar({ collapsed, mobileMenuOpen }) {
   const [openSubmenu, setOpenSubmenu] = useState(null);
 
   const toggleSubmenu = (menu) => {
@@ -32,7 +32,7 @@ export default function Sidebar({ collapsed, mobileMenuOpen, onToggle }) {
     `}
     >
       <div className="flex flex-col h-full">
-        <SidebarHeader collapsed={collapsed} onToggle={onToggle} />
+        <SidebarHeader />
 
         <div className="flex-1 overflow-y-auto py-4 px-2">
           <nav className="space-y-1">
