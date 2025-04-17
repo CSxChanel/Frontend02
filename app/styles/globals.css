@@ -1,28 +1,12 @@
 @import "tailwindcss";
 
-/* Neon Animation */
-/* @keyframes text-shine {
-  0% {
-    background-position: 0% 50%;
-  }
-  100% {
-    background-position: 100% 50%;
-  }
-}
-
-.animate-text-shine {
-  animation: text-shine 3s ease-in-out infinite alternate;
-} */
-
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 5px;
 }
-
-::-webkit-scrollbar-track {
+/* ::-webkit-scrollbar-track {
   @apply bg-gray-200 dark:bg-gray-800;
-}
-
+} */
 ::-webkit-scrollbar-thumb {
   @apply bg-purple-500 rounded-full;
 }
