@@ -1,35 +1,46 @@
-"use client";
-import { useMediaQuery } from "react-responsive";
-import GlowCard from "../_components/ui/dataGlowCard";
+import DashboardTitle from "../components/ui/dashboard/DashboardTitle";
+import StatsCard from "../components/ui/dashboard/StartsCard";
+import { FaDollarSign, FaUsers, FaShoppingCart, FaTasks } from "react-icons/fa";
 
 export default function DashboardPage() {
-  const isMobile = useMediaQuery({ maxWidth: 768 });
-
   return (
-    <div
-      className={`grid ${isMobile ? "grid-cols-1 gap-4" : "grid-cols-3 gap-6"}`}
-    >
-      <GlowCard>
-        <CompactUserProfile />
-      </GlowCard>
+    <>
+      <DashboardTitle />
 
-      <GlowCard>
-        <CompactPaymentStatus />
-      </GlowCard>
-    </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-6">
+        <StatsCard
+          title="Total Revenue"
+          value="$24,780"
+          change="+12.5% from last month"
+          icon={<FaDollarSign className="animate-bounce-slow" />}
+          gradientFrom="from-blue-500"
+          gradientTo="to-blue-400"
+        />
+        <StatsCard
+          title="New Users"
+          value="1,254"
+          change="+8.2% from last month"
+          icon={<FaUsers className="animate-float" />}
+          gradientFrom="from-purple-500"
+          gradientTo="to-purple-400"
+        />
+        <StatsCard
+          title="Total Orders"
+          value="3,487"
+          change="+5.7% from last month"
+          icon={<FaShoppingCart className="animate-spin-slow" />}
+          gradientFrom="from-green-500"
+          gradientTo="to-green-400"
+        />
+        <StatsCard
+          title="Pending Tasks"
+          value="18"
+          change="-3 from yesterday"
+          icon={<FaTasks className="animate-pulse-slow" />}
+          gradientFrom="from-pink-500"
+          gradientTo="to-pink-400"
+        />
+      </div>
+    </>
   );
 }
-
-const CompactUserProfile = () => (
-  <div className="p-4">
-    <h3 className="text-sm font-semibold text-cyan-400">PROFILE</h3>
-    {/* Compact content */}
-  </div>
-);
-
-const CompactPaymentStatus = () => (
-  <div className="p-4">
-    <h3 className="text-sm font-semibold text-purple-400">PAYMENT</h3>
-    {/* Compact content */}
-  </div>
-);

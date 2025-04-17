@@ -198,7 +198,7 @@ export default function SidebarDashboard() {
         </div>
 
         {/* Footer */}
-        <div className="fixed bottom-0 bg-slate-200 dark:bg-gray-800 w-60 px-2 py-4 border-t border-gray-200 dark:border-gray-700">
+        <div className="p-4 border-t border-gray-200 dark:border-gray-700">
           <div className="flex items-center">
             <Image
               className="w-10 h-10 rounded-full mr-4 border-2 border-primary-500 animate-float"

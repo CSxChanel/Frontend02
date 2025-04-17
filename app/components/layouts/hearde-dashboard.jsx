@@ -1,6 +1,6 @@
 // src/components/layout/heared-dashborad
 
-import ThemeToggle from "../themeToggle";
+import ThemeToggle from "../ThemeToggle";
 import NotificationBell from "../ui/notificationBell";
 import SearchInput from "../ui/searchInput";
 import HamburgerMenu from "../ui/hamburgerMenu";
