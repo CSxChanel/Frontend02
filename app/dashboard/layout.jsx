@@ -2,7 +2,7 @@
 "use client";
 import Sidebar from "@/app/_components/layouts/sidebar-dashboard";
 import Header from "@/app/_components/layouts/hearde-dashboard";
-import ThemeProvider from "../providers/themeProvider";
+import ThemeProvider from "../providers/ThemeProvider";
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -16,7 +16,7 @@ const containerVariants = {
 
 export default function DashboardLayout({ children }) {
   return (
-    <div className="flex min-h-screen">
+    <div className="flex min-h-screen ">
       <Sidebar />
       <div className="flex-1">
         <Header />
