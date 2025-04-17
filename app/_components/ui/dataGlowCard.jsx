@@ -1,12 +1,19 @@
 "use client";
+import { motion } from "framer-motion";
 
-export default function DataGlowCard({ children, className }) {
+export default function GlowCard({ children }) {
   return (
-    <div className={`relative group ${className}`}>
-      <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-xl blur opacity-25 group-hover:opacity-50 transition duration-500" />
-      <div className="relative bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-800">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5 }}
+      whileHover={{ scale: 1.02 }}
+      className="relative group rounded-xl overflow-hidden"
+    >
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-cyan-400/10 group-hover:opacity-100 opacity-0 transition-opacity" />
+      <div className="relative bg-gray-800/50 backdrop-blur-sm p-6 h-full border border-gray-700 rounded-xl">
         {children}
       </div>
-    </div>
+    </motion.div>
   );
 }
