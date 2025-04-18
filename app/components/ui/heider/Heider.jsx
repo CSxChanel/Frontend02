@@ -1,18 +1,10 @@
+// components/ui/heider/Heider.jsx
 "use client";
-import {
-  FaBars,
-  FaSearch,
-  FaBell,
-  FaEnvelope,
-  FaMoon,
-  FaSun,
-} from "react-icons/fa";
 
-export default function Header({
-  onToggleMobileMenu,
-  onToggleDarkMode,
-  darkMode,
-}) {
+import { FaBars, FaSearch, FaBell, FaEnvelope } from "react-icons/fa";
+import ThemeToggle from "../../ThemeToggle";
+
+export default function Header({ onToggleMobileMenu }) {
   return (
     <header className="flex items-center justify-between h-16 px-4 border-b border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 transition-colors duration-300">
       <button
@@ -43,12 +35,7 @@ export default function Header({
         <button className="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200">
           <FaEnvelope />
         </button>
-        <button
-          onClick={onToggleDarkMode}
-          className="p-2 rounded-full text-gray-500 dark:text-gray-300 hover:text-gray-600 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
-        >
-          {darkMode ? <FaSun /> : <FaMoon />}
-        </button>
+        <ThemeToggle />
       </div>
     </header>
   );

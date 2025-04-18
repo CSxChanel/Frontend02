@@ -1,4 +1,4 @@
-// _components/userProfileCard
+// components/ui/UserProfileCard
 "use client";
 
 import Image from "next/image";

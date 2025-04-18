@@ -25,7 +25,9 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" suppressContentEditableWarning>
       <body className={`${orbitron.variable} ${rajdhani.variable}`}>
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
