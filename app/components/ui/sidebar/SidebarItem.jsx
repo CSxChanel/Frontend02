@@ -1,17 +1,19 @@
-export default function SidebarItem({
-  href,
-  icon,
-  text,
-  active = false,
-  badge,
-}) {
+"use client";
+
+import Link from "next/link";
+import { usePathname } from "next/navigation";
+
+export default function SidebarItem({ href, icon, text, badge }) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
   return (
-    <a
+    <Link
       href={href}
       className={`
         flex items-center px-4 py-3 rounded-lg group transition-all duration-200
         ${
-          active
+          isActive
             ? "bg-gray-100 dark:bg-gray-700 border-l-4 border-primary-500"
             : "hover:bg-gray-100 dark:hover:bg-gray-700"
         }
@@ -19,10 +21,13 @@ export default function SidebarItem({
     >
       <span
         className={`
-        mr-3 text-lg text-gray-500 dark:text-gray-400 
-        ${active ? "text-primary-600" : "group-hover:text-primary-600"}
-        transition-transform duration-200
-      `}
+          mr-3 text-lg 
+          ${
+            isActive
+              ? "text-primary-600"
+              : "text-gray-500 dark:text-gray-400 group-hover:text-primary-600"
+          }
+        `}
       >
         {icon}
       </span>
@@ -32,6 +37,6 @@ export default function SidebarItem({
           {badge}
         </span>
       )}
-    </a>
+    </Link>
   );
 }

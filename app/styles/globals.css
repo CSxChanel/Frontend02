@@ -3,21 +3,6 @@
 
 /* @custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *)); */
 
-/* CSS kustom untuk dark mode */
-@media (prefers-color-scheme: dark) {
-  .dark-mode {
-    background-color: #333;
-    color: #fff;
-  }
-}
-/* CSS kustom untuk dark mode */
-@media (prefers-color-scheme: light) {
-  .dark-mode {
-    background-color: #0ff7a9;
-    color: #333;
-  }
-}
-
 /* Scrollbar Styling */
 ::-webkit-scrollbar {
   width: 5px;
