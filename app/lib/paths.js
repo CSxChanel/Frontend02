@@ -1,9 +1,10 @@
 // lib/paths.js
 export const userPaths = {
   all: "/dashboard/data-users/all-user",
-  new: "/dashboard/data-users/new-user",
-  edit: "/dashboard/data-users/edit-user",
-  delete: "/dashboard/data-users/delete-user",
+  new: "/dashboard/data-users/create",
+  edit: "/dashboard/data-users/update",
+  delete: "/dashboard/data-users/delete",
+  roles: "/dashboard/data-users/roles",
 };
 
 export const orderPaths = {

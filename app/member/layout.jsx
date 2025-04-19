@@ -1,13 +1,13 @@
-// dashboard/layout.jsx
+// app/member/layout.jsx
 "use client";
 
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
-import Sidebar from "@/components/ui/sidebar/Sidebar";
+import Sidebar from "@/";
 import Header from "@/components/ui/heider/Heider";
 import GlobalLoader from "@/context/GlobalLoading";
 
-export default function DashboardLayout({ children }) {
+export default function MemberLayout({ children }) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);

@@ -1,10 +1,10 @@
-// dashboard/page.jsx
+// member/page.jsx
 
 import DashboardTitle from "@/components/ui/dashboard/DashboardTitle";
 import StatsCard from "@/components/ui/dashboard/StartsCard";
 import { FaDollarSign, FaUsers, FaShoppingCart, FaTasks } from "react-icons/fa";
 
-export default function DashboardPage() {
+export default function MemberPage() {
   return (
     <>
       <DashboardTitle />

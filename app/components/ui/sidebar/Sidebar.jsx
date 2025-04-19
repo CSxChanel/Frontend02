@@ -16,7 +16,7 @@ import SidebarMenuGroup from "./SidebarMenuGrup";
 import SidebarItem from "./SidebarItem";
 import SidebarSubItem from "./SidebarSubItem";
 import UserProfile from "./UserProfile";
-import { userPaths } from "../../../lib/path";
+import { userPaths } from "@/lib/paths";
 
 export default function Sidebar({ collapsed, mobileMenuOpen }) {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -45,8 +45,8 @@ export default function Sidebar({ collapsed, mobileMenuOpen }) {
               icon={<FaTachometerAlt />}
               text="Dashboard"
             />
-            {/* ==== USERS ==== */}
 
+            {/* ==== USERS ==== */}
             <SidebarMenuGroup
               title="Users"
               icon={<FaUsers />}
@@ -57,28 +57,45 @@ export default function Sidebar({ collapsed, mobileMenuOpen }) {
                 userPaths.new,
                 userPaths.edit,
                 userPaths.delete,
+                userPaths.roles,
               ]}
             >
               <SidebarSubItem href={userPaths.all} text="All Users" />
               <SidebarSubItem href={userPaths.new} text="New User" />
               <SidebarSubItem href={userPaths.edit} text="Edit User" />
               <SidebarSubItem href={userPaths.delete} text="Delete User" />
+              <SidebarSubItem href={userPaths.roles} text="Roles User" />
             </SidebarMenuGroup>
 
-            {/* ==== PRODUCTS ==== */}
+            {/* ==== PPPoE ==== */}
             <SidebarMenuGroup
-              title="Products"
-              icon={<FaBox />}
-              open={openSubmenu === "products"}
-              onToggle={() => toggleSubmenu("products")}
+              title="PPPoE"
+              icon={<FaBook />}
+              open={openSubmenu === "pppoe"}
+              onToggle={() => toggleSubmenu("pppoe")}
             >
-              <SidebarSubItem href="#" text="All Products" />
-              <SidebarSubItem href="#" text="New Product" />
-              <SidebarSubItem href="#" text="Edit Product" />
-              <SidebarSubItem href="#" text="Delete Product" />
+              <SidebarSubItem href="#" text="All PPPoE" />
+              <SidebarSubItem href="#" text="New PPPoE" />
+              <SidebarSubItem href="#" text="Edit PPPoE" />
+              <SidebarSubItem href="#" text="Delete PPPoE" />
             </SidebarMenuGroup>
+
+            {/* ==== PAYMENTS ==== */}
+            <SidebarMenuGroup
+              title="Payments"
+              icon={<FaBox />}
+              open={openSubmenu === "payments"}
+              onToggle={() => toggleSubmenu("payments")}
+            >
+              <SidebarSubItem href="#" text="All Payments" />
+              <SidebarSubItem href="#" text="New Payment" />
+              <SidebarSubItem href="#" text="Edit Payment" />
+              <SidebarSubItem href="#" text="Delete Payment" />
+            </SidebarMenuGroup>
+
             {/* ==== ANALYTICS ==== */}
             <SidebarItem href="#" icon={<FaChartLine />} text="Analytics" />
+
             {/* ==== ORDERS ==== */}
             <SidebarItem
               href="#"
@@ -86,6 +103,7 @@ export default function Sidebar({ collapsed, mobileMenuOpen }) {
               text="Orders"
               badge="15"
             />
+
             {/* ==== SETINGS ==== */}
             <SidebarMenuGroup
               title="Settings"

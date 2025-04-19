@@ -2,6 +2,7 @@
 
 import { Orbitron, Rajdhani } from "next/font/google";
 import { ThemeProvider } from "./providers/ThemeProvider";
+import { LoadingProvider } from "./context/LoadingContext";
 import "./styles/globals.css";
 
 const orbitron = Orbitron({
@@ -26,7 +27,7 @@ export default function RootLayout({ children }) {
     <html lang="en" suppressContentEditableWarning>
       <body className={`${orbitron.variable} ${rajdhani.variable}`}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          {children}
+          <LoadingProvider>{children}</LoadingProvider>
         </ThemeProvider>
       </body>
     </html>
