@@ -1,3 +1,5 @@
+// sidebar/SidebarItem.jsx
+
 "use client";
 
 import Link from "next/link";
@@ -14,7 +16,7 @@ export default function SidebarItem({ href, icon, text, badge }) {
         flex items-center px-4 py-3 rounded-lg group transition-all duration-200
         ${
           isActive
-            ? "bg-gray-100 dark:bg-gray-700 border-l-4 border-primary-500"
+            ? "bg-gray-100 dark:bg-gray-700 border-l-4 border-cyan-500"
             : "hover:bg-gray-100 dark:hover:bg-gray-700"
         }
       `}
@@ -29,7 +31,7 @@ export default function SidebarItem({ href, icon, text, badge }) {
           }
         `}
       >
-        {icon}
+        <span className="text-cyan-400">{icon}</span>
       </span>
       <span className="whitespace-nowrap">{text}</span>
       {badge && (

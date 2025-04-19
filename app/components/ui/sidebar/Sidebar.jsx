@@ -14,8 +14,9 @@ import {
 import SidebarHeader from "./SidebarHeider";
 import SidebarMenuGroup from "./SidebarMenuGrup";
 import SidebarItem from "./SidebarItem";
-import UserProfile from "./UserProfile";
 import SidebarSubItem from "./SidebarSubItem";
+import UserProfile from "./UserProfile";
+import { userPaths } from "../../../lib/path";
 
 export default function Sidebar({ collapsed, mobileMenuOpen }) {
   const [openSubmenu, setOpenSubmenu] = useState(null);
@@ -38,101 +39,64 @@ export default function Sidebar({ collapsed, mobileMenuOpen }) {
 
         <div className="flex-1 overflow-y-auto py-4 px-2">
           <nav className="space-y-1">
+            {/* ==== DASHBOARD ==== */}
             <SidebarItem
-              href="/dashboard/"
+              href="/dashboard"
               icon={<FaTachometerAlt />}
               text="Dashboard"
             />
+            {/* ==== USERS ==== */}
 
             <SidebarMenuGroup
               title="Users"
               icon={<FaUsers />}
               open={openSubmenu === "users"}
               onToggle={() => toggleSubmenu("users")}
+              activePaths={[
+                userPaths.all,
+                userPaths.new,
+                userPaths.edit,
+                userPaths.delete,
+              ]}
             >
-              <SidebarSubItem
-                href="dashboard/data-users/all-user"
-                text="All Users"
-              />
-              <SidebarSubItem
-                href="dashboard/data-users/new-user"
-                text="New User"
-              />
-              <SidebarSubItem
-                href="dashboard/data-users/edit-user"
-                text="Edit User"
-              />
-              <SidebarSubItem
-                href="dashboard/data-users/delete-user"
-                text="Delete User"
-              />
+              <SidebarSubItem href={userPaths.all} text="All Users" />
+              <SidebarSubItem href={userPaths.new} text="New User" />
+              <SidebarSubItem href={userPaths.edit} text="Edit User" />
+              <SidebarSubItem href={userPaths.delete} text="Delete User" />
             </SidebarMenuGroup>
 
+            {/* ==== PRODUCTS ==== */}
             <SidebarMenuGroup
               title="Products"
               icon={<FaBox />}
               open={openSubmenu === "products"}
               onToggle={() => toggleSubmenu("products")}
             >
-              <a
-                href="#"
-                className="block py-2 px-4 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:hover:text-cyan-400 dark:text-gray-300"
-              >
-                Inventory
-              </a>
-              <a
-                href="#"
-                className="block py-2 px-4 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:hover:text-cyan-400 dark:text-gray-300"
-              >
-                Categories
-              </a>
-              <a
-                href="#"
-                className="block py-2 px-4 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:hover:text-cyan-400 dark:text-gray-300"
-              >
-                Discounts
-              </a>
+              <SidebarSubItem href="#" text="All Products" />
+              <SidebarSubItem href="#" text="New Product" />
+              <SidebarSubItem href="#" text="Edit Product" />
+              <SidebarSubItem href="#" text="Delete Product" />
             </SidebarMenuGroup>
-
+            {/* ==== ANALYTICS ==== */}
             <SidebarItem href="#" icon={<FaChartLine />} text="Analytics" />
-
+            {/* ==== ORDERS ==== */}
             <SidebarItem
               href="#"
               icon={<FaShoppingCart />}
               text="Orders"
               badge="15"
             />
-
+            {/* ==== SETINGS ==== */}
             <SidebarMenuGroup
               title="Settings"
               icon={<FaCog />}
               open={openSubmenu === "settings"}
               onToggle={() => toggleSubmenu("settings")}
             >
-              <a
-                href="#"
-                className="block py-2 px-4 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:hover:text-cyan-400 dark:text-gray-300"
-              >
-                General
-              </a>
-              <a
-                href="#"
-                className="block py-2 px-4 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:hover:text-cyan-400 dark:text-gray-300"
-              >
-                Security
-              </a>
-              <a
-                href="#"
-                className="block py-2 px-4 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:hover:text-cyan-400 dark:text-gray-300"
-              >
-                Notifications
-              </a>
-              <a
-                href="#"
-                className="block py-2 px-4 text-sm rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 text-gray-600 dark:hover:text-cyan-400 dark:text-gray-300"
-              >
-                Integrations
-              </a>
+              <SidebarSubItem href="#" text="Profile" />
+              <SidebarSubItem href="#" text="Account" />
+              <SidebarSubItem href="#" text="Billing" />
+              <SidebarSubItem href="#" text="Notifications" />
             </SidebarMenuGroup>
           </nav>
 
@@ -144,7 +108,7 @@ export default function Sidebar({ collapsed, mobileMenuOpen }) {
             <SidebarItem href="#" icon={<FaBook />} text="Documentation" />
           </nav>
         </div>
-
+        {/* ==== USER PROFILE ==== */}
         <UserProfile />
       </div>
     </div>
